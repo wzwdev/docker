@@ -1,8 +1,12 @@
 #IMAGE centos6.6
 #DESCRIPTION centos6.6:root/root,add vim/wget/tar
+#docker build -t registry.aliyuncs.com/wzwdev/os:centos6.6 .
+#docker run --name centos -d -p 50022:22 registry.aliyuncs.com/wzwdev/os:centos6.6       background run,stop not delete
+#docker run --name centos --rm -p 50022:22 registry.aliyuncs.com/wzwdev/os:centos6.6    background run,stop and delete
+#docker run --name centos --rm -p 50022:22 registry.aliyuncs.com/wzwdev/os:centos6.6 echo wzw   modi CMD(/usr/sbin/sshd -D,front run) stop and delete
 
 FROM docker.io/centos:centos6.6
-MAINTAINER wanghuirui "wanghuirui@126.com"
+MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN yum install -y openssh-server
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
