@@ -9,7 +9,7 @@ MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN yum install -y subversion
 
-ADD files/proj.tar.gz /alidata/server/subversion
+ADD http://7xsjza.com2.z0.glb.clouddn.com/proj.tar.gz /alidata/server/subversion
 
 RUN chmod +x /alidata/server/subversion/proj/test/pre-commit
 
