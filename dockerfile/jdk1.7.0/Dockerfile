@@ -6,7 +6,7 @@
 FROM registry.aliyuncs.com/wzwdev/os:centos6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-ADD files/jdk1.7.0.tar.gz /alidata/server
+ADD http://7xsjza.com2.z0.glb.clouddn.com/jdk1.7.0.tar.gz /alidata/server
 
 ENV JAVA_HOME=/alidata/server/jdk1.7.0
 ENV PATH=$JAVA_HOME/bin:$PATH
