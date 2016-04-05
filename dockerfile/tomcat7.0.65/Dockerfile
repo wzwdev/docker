@@ -3,7 +3,7 @@
 #docker build -t registry.aliyuncs.com/wzwdev/tomcat:7.0.65 .
 #docker run --name tomcat -d -p 80:80 --restart=always registry.aliyuncs.com/wzwdev/tomcat:7.0.65
 
-FROM registry.aliyuncs.com/wzwdev/jdk1.7.0
+FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
 ADD http://7xsjza.com2.z0.glb.clouddn.com/tomcat7.0.65.tar.gz /alidata/server/
