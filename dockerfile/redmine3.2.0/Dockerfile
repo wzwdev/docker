@@ -6,7 +6,7 @@
 FROM registry.aliyuncs.com/wzwdev/os:centos6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-ADD http://7xsjza.com2.z0.glb.clouddn.com/redmine3.2.0.tar.gz /alidata/server
+ADD files/redmine3.2.0.tar.gz /alidata/server
 
 RUN groupadd mysql
 RUN useradd mysql -g mysql
