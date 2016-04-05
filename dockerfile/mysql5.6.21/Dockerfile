@@ -1,9 +1,9 @@
 #IMAGE mysql5.6.21
 #DESCRIPTION root/root csst/csst
-#docker build -t registry.aliyuncs.com/wzwdev/server:mysql5.6.21 .
-#docker run --name mysql -d -p 3306:3306 --restart=always registry.aliyuncs.com/wzwdev/server:mysql5.6.21
+#docker build -t registry.aliyuncs.com/wzwdev/mysql:5.6.21 .
+#docker run --name mysql -d -p 3306:3306 --restart=always registry.aliyuncs.com/wzwdev/mysql:5.6.21
 
-FROM registry.aliyuncs.com/wzwdev/os:centos6.6
+FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN yum install -y libaio

@@ -1,12 +1,13 @@
 #IMAGE redmine3.2.0
 #DESCRIPTION admin/12345678
-#docker build -t registry.aliyuncs.com/wzwdev/server:redmine3.2.0 .
-#docker run --name redmine -d -p 80:80 --restart=always registry.aliyuncs.com/wzwdev/server:redmine3.2.0
+#docker build -t registry.aliyuncs.com/wzwdev/redmine:3.2.0 .
+#docker run --name redmine -d -p 80:80 --restart=always registry.aliyuncs.com/wzwdev/redmine:3.2.0
 
-FROM registry.aliyuncs.com/wzwdev/os:centos6.6
+FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-ADD files/redmine3.2.0.tar.gz /alidata/server
+ADD http://7xsjza.com2.z0.glb.clouddn.com/redmine3.2.0.tar.gz /alidata/server/
+RUN cd /alidata/server/ && tar -zxf redmine3.2.0.tar.gz && rm -f redmine3.2.0.tar.gz
 
 RUN groupadd mysql
 RUN useradd mysql -g mysql
