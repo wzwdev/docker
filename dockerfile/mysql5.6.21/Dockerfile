@@ -8,9 +8,8 @@ MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN yum install -y libaio
 
-RUN wget -P /alidata/server http://7xsjza.com2.z0.glb.clouddn.com/mysql.tar.gz
-RUN tar -zxf /alidata/server/mysql.tar.gz
-RUN rm -f /alidata/server/mysql.tar.gz
+ADD http://7xsjza.com2.z0.glb.clouddn.com/mysql.tar.gz /alidata/server/
+RUN cd /alidata/server/ && tar -zxf mysql.tar.gz && rm -f mysql.tar.gz
 ADD files/mysqld /etc/init.d/mysqld
 
 RUN groupadd mysql
