@@ -4,7 +4,7 @@
 #docker run --name mysql -d -p 3690:3690 --restart=always registry.aliyuncs.com/wzwdev/subversion
 #docker run --name mysql -d -p 3690:3690 -v /alidata/server/subversion:/alidata/server/subversion --restart=always registry.aliyuncs.com/wzwdev/subversion
 
-FROM registry.aliyuncs.com/wzwdev/centos:6.6
+FROM registry.aliyuncs.com/wzwdev/centos:6.7
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN rpm --rebuilddb && yum install -y subversion

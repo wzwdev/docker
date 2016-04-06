@@ -3,7 +3,7 @@
 #docker build -t registry.aliyuncs.com/wzwdev/jdk:1.7.0 .
 #docker run --name jdk -d registry.aliyuncs.com/wzwdev/jdk:1.7.0
 
-FROM registry.aliyuncs.com/wzwdev/centos:6.6
+FROM registry.aliyuncs.com/wzwdev/centos:6.7
 MAINTAINER wzwdev "wzwdev@126.com"
 
 ADD http://7xsjza.com2.z0.glb.clouddn.com/jdk1.7.0.tar.gz /alidata/server/
