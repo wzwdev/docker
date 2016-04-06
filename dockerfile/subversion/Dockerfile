@@ -12,7 +12,7 @@ RUN yum install -y subversion;yum clean all
 ADD http://7xsjza.com2.z0.glb.clouddn.com/proj.tar.gz /alidata/server/subversion/
 RUN cd /alidata/server/subversion && tar -zxf proj.tar.gz && rm -f proj.tar.gz
 
-RUN chmod +x /alidata/server/subversion/proj/test/pre-commit
+RUN chmod +x /alidata/server/subversion/proj/test/hooks/pre-commit
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
