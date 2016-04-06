@@ -6,7 +6,7 @@
 FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-RUN yum install -y libaio
+RUN rpm --rebuilddb && yum install -y libaio
 
 ADD http://7xsjza.com2.z0.glb.clouddn.com/mysql.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf mysql.tar.gz && rm -f mysql.tar.gz
