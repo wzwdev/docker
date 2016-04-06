@@ -8,17 +8,7 @@
 FROM docker.io/centos:6.7
 MAINTAINER wzwdev "wzwdev@126.com"
 
-RUN yum install -y openssh-server
-RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
-RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
-RUN ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
-
 RUN yum install -y wget
-
-RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-RUN wget -O /etc/yum.repos.d/CentOS-Base-Aliyun.repo http://mirrors.aliyun.com/repo/Centos-6.repo 
-RUN yum clean all && yum makecache
-
 RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
 
