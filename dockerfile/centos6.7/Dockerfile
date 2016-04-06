@@ -19,7 +19,7 @@ RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backu
 RUN wget -O /etc/yum.repos.d/CentOS-Base-Aliyun.repo http://mirrors.aliyun.com/repo/Centos-6.repo 
 RUN yum clean all && yum makecache
 
-RUN rpm yum install -y vim
+RUN yum install -y vim
 RUN yum install -y tar
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
