@@ -3,7 +3,7 @@
 #docker build -t registry.aliyuncs.com/wzwdev/centos:6.6 .
 #docker run --name centos -d -p 50022:22 registry.aliyuncs.com/wzwdev/centos:6.6                       background run,stop not delete
 #docker run --name centos --rm -p 50022:22 registry.aliyuncs.com/wzwdev/centos:6.6                    background run,stop and delete
-#docker run --name centos --rm -p 50022:22 registry.aliyuncs.com/wzwdev/centos:6.6 echo wzw   modi CMD(/usr/sbin/sshd -D,front run) stop and delete
+#docker run --name centos --rm -p 50022:22 registry.aliyuncs.com/wzwdev/centos:6.6 echo wzw   modi CMD(/usr/sbin/sshd -D,front run) exec finish and delete
 
 FROM docker.io/centos:centos6.6
 MAINTAINER wzwdev "wzwdev@126.com"

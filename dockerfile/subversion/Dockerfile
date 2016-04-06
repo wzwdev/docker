@@ -7,7 +7,7 @@
 FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-RUN yum install -y subversion
+RUN yum install -y subversion;yum clean all
 
 ADD http://7xsjza.com2.z0.glb.clouddn.com/proj.tar.gz /alidata/server/subversion/
 RUN cd /alidata/server/subversion && tar -zxf proj.tar.gz && rm -f proj.tar.gz
