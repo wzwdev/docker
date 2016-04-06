@@ -7,11 +7,7 @@
 FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-<<<<<<< HEAD
 RUN rpm --rebuilddb && yum install -y subversion
-=======
-RUN yum install -y subversion
->>>>>>> parent of 52bb3a1... update centos6.6basic、subversion by aliyun tech support
 
 ADD http://7xsjza.com2.z0.glb.clouddn.com/proj.tar.gz /alidata/server/subversion/
 RUN cd /alidata/server/subversion && tar -zxf proj.tar.gz && rm -f proj.tar.gz

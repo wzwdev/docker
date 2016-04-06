@@ -14,7 +14,7 @@ RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
 RUN ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
 
 RUN yum install -y wget
-RUN yum install -y vim;yum clean all 
+RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
