@@ -1,8 +1,8 @@
 #IMAGE subversion
 #DESCRIPTION svn://ip/proj/test admin/admin
 #docker build -t registry.aliyuncs.com/wzwdev/subversion .
-#docker run --name mysql -d -p 3690:3690 --restart=always registry.aliyuncs.com/wzwdev/subversion
-#docker run --name mysql -d -p 3690:3690 -v /alidata/server/subversion:/alidata/server/subversion --restart=always registry.aliyuncs.com/wzwdev/subversion
+#docker run --name subversion -d -p 3690:3690 --restart=always registry.aliyuncs.com/wzwdev/subversion
+#docker run --name subversion -d -p 3690:3690 -v /alidata/server/subversion:/alidata/server/subversion --restart=always registry.aliyuncs.com/wzwdev/subversion
 
 FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
