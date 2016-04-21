@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo vsftp is running
+echo vsftpd is running
