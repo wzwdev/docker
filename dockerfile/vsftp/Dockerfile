@@ -8,7 +8,7 @@
 FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-RUN yum install -y vsftp
+RUN yum install -y vsftpd
 
 RUN mkdir -p /alidata/ftp
 RUN useradd -d /alidata/ftp -s /sbin/nologin ftpadmin 
