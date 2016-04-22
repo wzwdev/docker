@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo vsftpd is running
+/etc/init.d/vsftpd start
