@@ -1,7 +1,6 @@
 #IMAGE vsftp
 #DESCRIPTION ftp://ip  ftpadmin/ftpadmin
 #docker build -t registry.aliyuncs.com/wzwdev/vsftp .
-#docker run --name vsftp --rm -p 21:21 -it registry.aliyuncs.com/wzwdev/vsftp /bin/bash
 #docker run --name vsftp -d -p 21:21 --restart=always registry.aliyuncs.com/wzwdev/vsftp
 #docker run --name vsftp -d -p 21:21 -v /alidata/ftp:/alidata/ftp --restart=always registry.aliyuncs.com/wzwdev/vsftp
 
