@@ -16,8 +16,8 @@ RUN echo "ftpadmin:ftpadmin" | chpasswd
 RUN chown -R ftpadmin:ftpadmin /alidata/ftp
 RUN chmod -R 755 /alidata/ftp
 
-RUN echo chroot_local_user=YES >> /etc/vsftp.conf
-RUN echo anon_root=/alidata/ftp >> /etc/vsftp.conf
+RUN echo chroot_local_user=YES >> /etc/vsftpd.conf
+RUN echo anon_root=/alidata/ftp >> /etc/vsftpd.conf
 RUN chkconfig vsftpd on
 RUN service vsftpd start
 
