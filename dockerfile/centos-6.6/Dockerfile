@@ -1,5 +1,5 @@
-#IMAGE centos6.6
-#DESCRIPTION centos6.6:root/root,add vim/wget/tar
+#IMAGE centos-6.6
+#DESCRIPTION centos-6.6:root/root,add vim/wget/tar
 #docker build -t registry.aliyuncs.com/wzwdev/centos:6.6 .
 #docker run --name centos -d -p 50022:22 registry.aliyuncs.com/wzwdev/centos:6.6                       background run,stop not delete
 #docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:6.6                                        background run,stop and delete
