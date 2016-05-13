@@ -1,5 +1,5 @@
 #IMAGE jdk-1.7.0
-#DESCRIPTION jdk-1.7.0.45
+#DESCRIPTION jdk-1.7.0.80
 #docker build -t registry.aliyuncs.com/wzwdev/jdk:1.7.0 .
 #docker run --name jdk -d registry.aliyuncs.com/wzwdev/jdk:1.7.0
 
