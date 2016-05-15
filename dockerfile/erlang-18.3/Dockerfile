@@ -7,7 +7,7 @@ FROM registry.aliyuncs.com/wzwdev/jdk:1.7.0
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN rpm --rebuilddb && yum install -y gcc-c++ ncurses-devel openssl-devel xmlto fop unixODBC-devel
-RUN wget -O /alidata/otp_src_18.3.tar.gz ftp://test.ihorn.com.cn/product/otp_src_18.3.tar.gz 
+RUN wget -O /alidata/otp_src_18.3.tar.gz http://distfiles.macports.org/erlang/otp_src_18.3.tar.gz
 RUN cd /alidata && tar -zxf otp_src_18.3.tar.gz && chmod 755 -R otp_src_18.3
 RUN cd /alidata/otp_src_18.3 && ./configure --prefix=/alidata/server/erlang-18.3 && make && make install
 RUN rm -fr /alidata/otp_src_18.3
