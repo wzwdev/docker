@@ -3,18 +3,14 @@
 #docker build -t registry.aliyuncs.com/wzwdev/erlang:18.3 .
 #docker run --name erlang -d registry.aliyuncs.com/wzwdev/erlang:18.3
 
-#FROM registry.aliyuncs.com/wzwdev/jdk:1.7.0
-FROM registry.aliyuncs.com/wzwdev/centos:6.6
+FROM registry.aliyuncs.com/wzwdev/jdk:1.7.0
 MAINTAINER wzwdev "wzwdev@126.com"
 
-#RUN yum install -y gcc-c++ ncurses-devel openssl-devel xmlto fop unixODBC-devel
-#RUN cd /alidata &&  wget http://erlang.org/download/otp_src_18.3.tar.gz && tar -zxf otp_src_18.3.tar.gz
-#RUN /alidata/otp_src_18.3/configure --prefix=/alidata/server/erlang-18.3 && make && make install
-#RUN rm -fr /alidata/otp_src_18.3
-#RUN rm -f /alidata/otp_src_18.3.tar.gz
-
-ADD http://7xsjza.com2.z0.glb.clouddn.com/erlang-18.3.tar.gz /alidata/server/
-RUN cd /alidata/server/ && tar -zxf erlang-18.3.tar.gz && rm -f erlang-18.3.tar.gz
+RUN yum install -y gcc-c++ ncurses-devel openssl-devel xmlto fop unixODBC-devel
+RUN cd /alidata && wget http://erlang.org/download/otp_src_18.3.tar.gz && tar -zxf otp_src_18.3.tar.gz
+RUN /alidata/otp_src_18.3/configure --prefix=/alidata/server/erlang-18.3 && make && make install
+RUN rm -fr /alidata/otp_src_18.3
+RUN rm -f /alidata/otp_src_18.3.tar.gz
 
 ENV PATH=/alidata/server/erlang-18.3/bin:$PATH
 
