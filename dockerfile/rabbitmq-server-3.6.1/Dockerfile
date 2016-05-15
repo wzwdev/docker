@@ -6,8 +6,9 @@
 FROM registry.aliyuncs.com/wzwdev/erlang:18.3
 MAINTAINER wzwdev "wzwdev@126.com"
 
-RUN cd /alidata/server && wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.1/rabbitmq-server-generic-unix-3.6.1.tar.xz
-RUN cd /alidata/server && yum install -y xz && xz -d rabbitmq-server-generic-unix-3.6.1.tar.xz && tar -xf rabbitmq_server-3.6.1.tar && mv rabbitmq_server-3.6.1 rabbitmq-server-3.6.1 && rm -f rabbitmq-server-generic-unix-3.6.1.tar.xz
+RUN cd /alidata/server
+RUN wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.1/rabbitmq-server-generic-unix-3.6.1.tar.xz
+RUN yum install -y xz && xz -d rabbitmq-server-generic-unix-3.6.1.tar.xz && tar -xf rabbitmq_server-3.6.1.tar && mv rabbitmq_server-3.6.1 rabbitmq-server-3.6.1 && rm -f rabbitmq-server-generic-unix-3.6.1.tar.xz
 
 ADD files/rabbitmq-env.conf /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq-env.conf
 ADD files/rabbitmq.config /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq.config
