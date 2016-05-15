@@ -15,8 +15,8 @@ RUN cd /alidata/server/ && tar -zxf rabbitmq-server-3.6.1.tar.gz && rm -f rabbit
 ADD files/rabbitmq-env.conf /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq-env.conf
 ADD files/rabbitmq.config /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq.config
 
+RUN chmod -R 755 /alidata/server/rabbitmq-server-3.6.1
 RUN cd /alidata/server/rabbitmq-server-3.6.1
-RUN chmod -R 755 sbin
 RUN sbin/rabbitmq-server -detached
 RUN sbin/rabbitmq-plugins enable rabbitmq_management
 RUN sbin/rabbitmqctl add_user admin admin 
