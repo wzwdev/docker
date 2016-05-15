@@ -15,12 +15,12 @@ RUN cd /alidata/server/ && tar -zxf rabbitmq-server-3.6.1.tar.gz && rm -f rabbit
 ADD files/rabbitmq-env.conf /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq-env.conf
 ADD files/rabbitmq.config /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq.config
 
-RUN /alidata/server/rabbitmq-server-3.6.1/rabbitmq-server -detached
-RUN /alidata/server/rabbitmq-server-3.6.1/rabbitmq-plugins enable rabbitmq_management
-RUN /alidata/server/rabbitmq-server-3.6.1/rabbitmqctl add_user admin admin 
-RUN /alidata/server/rabbitmq-server-3.6.1/rabbitmqctl set_user_tags admin administrator  
-RUN /alidata/server/rabbitmq-server-3.6.1/rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"
-RUN /alidata/server/rabbitmq-server-3.6.1/rabbitmqctl stop
+RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmq-server -detached
+RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmq-plugins enable rabbitmq_management
+RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl add_user admin admin 
+RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl set_user_tags admin administrator  
+RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"
+RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl stop
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
