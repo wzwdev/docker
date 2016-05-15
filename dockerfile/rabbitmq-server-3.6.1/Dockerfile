@@ -13,7 +13,8 @@ RUN cd /alidata/server && xz -d rabbitmq-server-generic-unix-3.6.1.tar.xz && tar
 ADD files/rabbitmq-env.conf /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq-env.conf
 ADD files/rabbitmq.config /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq.config
 
-RUN cd rabbitmq-server-3.6.1
+RUN cd /alidata/server/rabbitmq-server-3.6.1
+RUN chmod -R 755 sbin
 RUN sbin/rabbitmq-server -detached
 RUN sbin/rabbitmq-plugins enable rabbitmq_management
 RUN sbin/rabbitmqctl add_user test test 
