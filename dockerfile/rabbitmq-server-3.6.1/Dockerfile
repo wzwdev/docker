@@ -15,7 +15,7 @@ RUN cd /alidata/server/ && tar -zxf rabbitmq-server-3.6.1.tar.gz && rm -f rabbit
 ADD files/rabbitmq-env.conf /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq-env.conf
 ADD files/rabbitmq.config /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq.config
 
-RUN rpm --rebuilddb && yum install -y glibc
+RUN rpm -ivh ftp://rpmfind.net/linux/centos/7.2.1511/os/x86_64/Packages/glibc-2.17-105.el7.x86_64.rpm
 RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmq-plugins enable rabbitmq_management --offline
 
 ADD files/run.sh /run.sh
