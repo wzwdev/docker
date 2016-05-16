@@ -20,6 +20,14 @@ RUN cd /alidata/server/ && tar -zxf rabbitmq-server-3.6.1.tar.gz && rm -f rabbit
 ADD files/rabbitmq-env.conf /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq-env.conf
 ADD files/rabbitmq.config /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq.config
 
+#update to glibc2.14 for /alidata/server/erlang-18.3/lib/erlang/erts-7.3/bin/erlexec: /lib64/libc.so.6: version `GLIBC_2.14' not found (required by /alidata/server/erlang-18.3/lib/erlang/erts-7.3/bin/erlexec)
+RUN wget -O /alidata/glibc-2.14.tar.gz http://ftp.gnu.org/gnu/glibc/glibc-2.14.tar.gz
+RUN cd /alidata && tar -zxf glibc-2.14.tar.gz
+RUN cd /alidata/glibc-2.14 && mkdir build
+RUN cd /alidata/glibc-2.14/build && ../configure --prefix=/opt/glibc-2.14 && make -j4 && make install
+RUN rm -f /alidata/glibc-2.14.tar.gz && rm -fr /alidata/glibc-2.14
+RUN cd lib64 && ln -s /opt/glibc-2.14/lib/libc-2.14.so libc.so.6
+
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
 CMD /run.sh && /usr/sbin/sshd -D
