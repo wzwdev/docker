@@ -26,7 +26,7 @@ RUN cd /alidata && tar -zxf glibc-2.14.tar.gz
 RUN cd /alidata/glibc-2.14 && mkdir build
 RUN cd /alidata/glibc-2.14/build && ../configure --prefix=/opt/glibc-2.14 && make -j4 && make install
 RUN rm -f /alidata/glibc-2.14.tar.gz && rm -fr /alidata/glibc-2.14
-RUN cd lib64 && ln -s /opt/glibc-2.14/lib/libc-2.14.so libc.so.6
+RUN ln -s /opt/glibc-2.14/lib/libc-2.14.so /lib64/libc.so.6
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
