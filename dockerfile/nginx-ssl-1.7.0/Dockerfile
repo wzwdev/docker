@@ -7,7 +7,7 @@ FROM registry.aliyuncs.com/wzwdev/nginx:1.7.0
 MAINTAINER wzwdev "wzwdev@126.com"
 
 ADD files/nginx /alidata/server/nginx-1.7.0/nginx
-RUN chmod +x /run.sh
+RUN chmod +x /alidata/server/nginx-1.7.0/nginx
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
