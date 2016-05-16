@@ -15,13 +15,6 @@ RUN cd /alidata/server/ && tar -zxf rabbitmq-server-3.6.1.tar.gz && rm -f rabbit
 ADD files/rabbitmq-env.conf /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq-env.conf
 ADD files/rabbitmq.config /alidata/server/rabbitmq-server-3.6.1/etc/rabbitmq/rabbitmq.config
 
-RUN wget -O /alidata/glibc-2.14.1.tar.gz http://ftp.gnu.org/gnu/glibc/glibc-2.14.1.tar.gz
-RUN wget -O /alidata/glibc-ports-2.14.1.tar.gz http://ftp.gnu.org/gnu/glibc/glibc-ports-2.14.1.tar.gz
-RUN cd /alidata && tar -zxf glibc-2.14.1.tar.gz && tar -zxf glibc-ports-2.14.1.tar.gz && mv glibc-ports-2.14.1 glibc-2.14.1/ports
-RUN /alidata/glibc-2.14.1/configure  --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin && make && make install
-RUN ll /lib64/libc*
-RUN /alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmq-plugins enable rabbitmq_management --offline
-
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
 CMD /run.sh && /usr/sbin/sshd -D
