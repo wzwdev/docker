@@ -1,5 +1,5 @@
 #IMAGE nginx-ssl-1.7.0
-#DESCRIPTION nginx-ssl-1.7.0
+#DESCRIPTION nginx-ssl-1.7.0  compile nginx: ./configure --prefix=/alidata/server/nginx-1.7.0 --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre
 #docker build -t registry.aliyuncs.com/wzwdev/nginx-ssl:1.7.0 .
 #docker run --name nginx -d -p 80:80 --restart=always registry.aliyuncs.com/wzwdev/nginx-ssl:1.7.0
 
