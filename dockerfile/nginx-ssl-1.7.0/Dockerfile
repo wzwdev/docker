@@ -6,6 +6,8 @@
 FROM registry.aliyuncs.com/wzwdev/nginx:1.7.0
 MAINTAINER wzwdev "wzwdev@126.com"
 
+RUN cd lib64 && ln -s libpcre.so.0.0.1 libpcre.so.1
+
 ADD files/nginx /alidata/server/nginx-1.7.0/sbin/nginx
 RUN chmod +x /alidata/server/nginx-1.7.0/sbin/nginx
 
