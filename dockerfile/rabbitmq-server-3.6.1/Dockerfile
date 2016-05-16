@@ -2,6 +2,11 @@
 #DESCRIPTION rabbitmq-server-3.6.1 http://ip:15672 admin/admin
 #docker build -t registry.aliyuncs.com/wzwdev/rabbitmq-server:3.6.1 .
 #docker run --name rabbitmq -d registry.aliyuncs.com/wzwdev/rabbitmq-server:3.6.1
+#docker exec -it rabbitmq bash
+#/alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmq-plugins enable rabbitmq_management
+#/alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl add_user admin admin
+#/alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl set_user_tags admin administrator
+#/alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"
 
 FROM registry.aliyuncs.com/wzwdev/erlang:18.3
 MAINTAINER wzwdev "wzwdev@126.com"
