@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmq-server &
+/alidata/server/nginx-1.7.0/sbin/nginx
