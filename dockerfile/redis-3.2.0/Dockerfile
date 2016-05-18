@@ -11,7 +11,6 @@ RUN cd /alidata/server/ && tar -zxf redis-3.2.0.tar.gz && rm -f ../redis-3.2.0.t
 RUN rpm --rebuilddb && yum install -y gcc-c++
 RUN cd /alidata/server/redis-3.2.0 && make
 ADD files/redis.conf /alidata/server/redis-3.2.0/redis.conf
-ADD files/sentinel.conf /alidata/server/redis-3.2.0/sentinel.conf
 RUN mkdir -p /alidata/server/redis-3.2.0/data && mkdir -p /alidata/server/redis-3.2.0/logs
 
 ENV PATH=$PATH:/alidata/server/redis-3.2.0/src
