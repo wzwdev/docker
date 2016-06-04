@@ -6,7 +6,7 @@
 FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-RUN yum install -y pcre pcre-devel
+RUN rpm --rebuilddb && yum install -y pcre pcre-devel
 RUN yum install -y zlib zlib-devel
 RUN yum install -y openssl openssl-devel
 
