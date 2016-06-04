@@ -7,8 +7,8 @@ FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN rpm --rebuilddb && yum install -y pcre pcre-devel
-RUN yum install -y zlib zlib-devel
-RUN yum install -y openssl openssl-devel
+RUN rpm --rebuilddb && yum install -y zlib zlib-devel
+RUN rpm --rebuilddb && yum install -y openssl openssl-devel
 
 ADD http://7xsjza.com1.z0.glb.clouddn.com/nginx-1.7.0.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf nginx-1.7.0.tar.gz && rm -f nginx-1.7.0.tar.gz
