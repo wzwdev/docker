@@ -9,10 +9,6 @@ MAINTAINER wzwdev "wzwdev@126.com"
 ADD http://7xsjza.com2.z0.glb.clouddn.com/tomcat-7.0.68.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf tomcat-7.0.68.tar.gz && rm -f tomcat-7.0.68.tar.gz
 
-ADD http://7xsjza.com2.z0.glb.clouddn.com/tomcat-7.0.68.tar.gz /alidata/server/
-RUN cd /alidata/server/ && tar -zxf tomcat-7.0.68.tar.gz && rm -f tomcat-7.0.68.tar.gz
-
-
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
 CMD /run.sh && /usr/sbin/sshd -D
