@@ -1,7 +1,7 @@
 #IMAGE rabbitmq-server-3.6.1
 #DESCRIPTION rabbitmq-server-3.6.1 http://ip:15672 admin/admin
 #docker build -t registry.aliyuncs.com/wzwdev/rabbitmq-server:3.6.1 .
-#docker run --name rabbitmq -d registry.aliyuncs.com/wzwdev/rabbitmq-server:3.6.1
+#docker run --name rabbitmq -d -p 5672:5672 -p 15672:15672 registry.aliyuncs.com/wzwdev/rabbitmq-server:3.6.1
 #docker exec -it rabbitmq bash
 #/alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmq-plugins enable rabbitmq_management
 #/alidata/server/rabbitmq-server-3.6.1/sbin/rabbitmqctl add_user admin admin
