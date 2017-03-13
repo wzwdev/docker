@@ -6,18 +6,16 @@
 FROM registry.aliyuncs.com/wzwdev/jdk:1.8.0
 MAINTAINER wzwdev "wzwdev@126.com"
 
-wget -O /alidata/server/zookeeper-3.4.8.tar.gz ftp://test.ihorn.com.cn/zookeeper-3.4.8.tar.gz
-cd /alidata/server && tar -zxvf zookeeper-3.4.8.tar.gz
-cp -r /alidata/server/zookeeper-3.4.8 /alidata/server/zookeeper-3.4.8
-touch /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-echo tickTime=2000 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-echo dataDir=/alidata/server/zookeeper-3.4.8/data >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-echo dataLogDir=/alidata/server/zookeeper-3.4.8/logs >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-echo clientPort=2181 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-echo initLimit=5 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-echo syncLimit=2 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-
-rm -fr /alidata/server/zookeeper-3.4.8.tar.gz
+RUN wget -O /alidata/server/zookeeper-3.4.8.tar.gz ftp://test.ihorn.com.cn/zookeeper-3.4.8.tar.gz
+RUN cd /alidata/server && tar -zxvf zookeeper-3.4.8.tar.gz
+RUN touch /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
+RUN echo tickTime=2000 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
+RUN echo dataDir=/alidata/server/zookeeper-3.4.8/data >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
+RUN echo dataLogDir=/alidata/server/zookeeper-3.4.8/logs >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
+RUN echo clientPort=2181 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
+RUN echo initLimit=5 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
+RUN echo syncLimit=2 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
+RUN rm -fr /alidata/server/zookeeper-3.4.8.tar.gz
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
