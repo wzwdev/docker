@@ -15,7 +15,6 @@ RUN echo dataLogDir=/alidata/server/zookeeper-3.4.8/logs >> /alidata/server/zook
 RUN echo clientPort=2181 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
 RUN echo initLimit=5 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
 RUN echo syncLimit=2 >> /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
-
 RUN rm -fr /alidata/server/zookeeper-3.4.8.tar.gz
 
 ADD files/run.sh /run.sh
