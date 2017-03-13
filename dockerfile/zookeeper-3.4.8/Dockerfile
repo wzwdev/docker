@@ -6,7 +6,7 @@
 FROM registry.aliyuncs.com/wzwdev/jdk:1.8.0
 MAINTAINER wzwdev "wzwdev@126.com"
 
-wget -O /alidata/server/zookeeper-3.4.8.tar.gz http://apache.fayea.com/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz
+wget -O /alidata/server/zookeeper-3.4.8.tar.gz ftp://test.ihorn.com.cn/zookeeper-3.4.8.tar.gz
 cd /alidata/server && tar -zxvf zookeeper-3.4.8.tar.gz
 cp -r /alidata/server/zookeeper-3.4.8 /alidata/server/zookeeper-3.4.8
 touch /alidata/server/zookeeper-3.4.8/conf/zoo.cfg
