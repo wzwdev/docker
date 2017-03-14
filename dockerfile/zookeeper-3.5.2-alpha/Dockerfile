@@ -1,7 +1,7 @@
 #IMAGE zookeeper-3.5.2-alpha
 #DESCRIPTION zookeeper-3.5.2-alpha
-#docker build -t registry.aliyuncs.com/wzwdev/zookeeper:3.4.8 .
-#docker run --name zookeeper -d -p 2181:2181 --restart=always registry.aliyuncs.com/wzwdev/zookeeper:3.4.8
+#docker build -t registry.aliyuncs.com/wzwdev/zookeeper:3.5.2-alpha .
+#docker run --name zookeeper -d -p 2181:2181 --restart=always registry.aliyuncs.com/wzwdev/zookeeper:3.5.2-alpha
 
 FROM registry.aliyuncs.com/wzwdev/jdk:1.8.0
 MAINTAINER wzwdev "wzwdev@126.com"
