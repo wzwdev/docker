@@ -8,7 +8,7 @@ MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN rpm --rebuilddb && yum install -y libaio
 
-ADD  ftp://test.ihorn.com.cn/mysql.tar.gz /alidata/server/
+RUN wget -O /alidata/server/mysql.tar.gz ftp://test.ihorn.com.cn/mysql.tar.gz
 RUN cd /alidata/server/ && tar -zxf mysql.tar.gz && rm -f mysql.tar.gz
 ADD files/mysqld /etc/init.d/mysqld
 
