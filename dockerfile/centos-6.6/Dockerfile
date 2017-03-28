@@ -19,7 +19,7 @@ RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
 RUN rpm --rebuilddb && yum install -y procps
 RUN yum install -y net-tools
-RUN yum install -y lszrz
+RUN rpm --rebuilddb && yum install -y lszrz
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "root:root" | chpasswd
