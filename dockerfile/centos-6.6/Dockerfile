@@ -17,7 +17,7 @@ RUN ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
 RUN yum install -y wget
 RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
-RUN yum install -y procps
+RUN rpm --rebuilddb && yum install -y procps
 RUN yum install -y net-tools
 RUN yum install -y lszrz
 
