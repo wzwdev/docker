@@ -1,5 +1,5 @@
 #IMAGE centos-6.6
-#DESCRIPTION centos-6.6:root/root,add vim/wget/tar
+#DESCRIPTION centos6.6:root/root,add vim/wget/tar/top/netstat/sz/rz
 #docker build -t registry.aliyuncs.com/wzwdev/centos:6.6 .
 #docker run --name centos -d -p 50022:22 registry.aliyuncs.com/wzwdev/centos:6.6                       background run,stop not delete
 #docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:6.6                                        background run,stop and delete
@@ -17,6 +17,9 @@ RUN ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
 RUN yum install -y wget
 RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
+RUN yum install -y procps
+RUN yum install -y net-tools
+RUN yum install -y lszrz
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "root:root" | chpasswd
