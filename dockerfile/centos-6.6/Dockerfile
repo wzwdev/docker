@@ -1,5 +1,5 @@
 #IMAGE centos-6.6
-#DESCRIPTION centos6.6:root/root,add vim/wget/tar/top/netstat/sz/rz
+#DESCRIPTION centos6.6:root/root,add vim/wget/tar/top/netstat/rz/sz
 #docker build -t registry.aliyuncs.com/wzwdev/centos:6.6 .
 #docker run --name centos -d -p 50022:22 registry.aliyuncs.com/wzwdev/centos:6.6                       background run,stop not delete
 #docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:6.6                                        background run,stop and delete
@@ -19,7 +19,7 @@ RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
 RUN rpm --rebuilddb && yum install -y procps
 RUN yum install -y net-tools
-RUN rpm --rebuilddb && yum install -y lszrz
+RUN rpm --rebuilddb && yum install -y lrzsz
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "root:root" | chpasswd
