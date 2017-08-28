@@ -6,8 +6,9 @@
 FROM registry.aliyuncs.com/wzwdev/centos:6.6
 MAINTAINER wzwdev "wzwdev@126.com"
 
-ADD http://oss.ninege.cn:9999/oss/soft/jdk-1.8.0.tar.gz /alidata/server/
+ADD http://101.37.82.250:50080/oss/jdk-1.8.0.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf jdk-1.8.0.tar.gz && rm -f jdk-1.8.0.tar.gz
+ADD files/java.security /alidata/server/jdk-1.8.0/jre/lib/security/java.security 
 
 ENV JAVA_HOME=/alidata/server/jdk-1.8.0
 ENV PATH=$JAVA_HOME/bin:$PATH
