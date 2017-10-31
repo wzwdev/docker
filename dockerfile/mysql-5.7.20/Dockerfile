@@ -7,6 +7,8 @@ FROM registry.aliyuncs.com/wzwdev/centos:7.0
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN rpm --rebuilddb && yum install -y libaio
+RUN rpm --rebuilddb && yum install -y numactl
+RUN rpm --rebuilddb && yum install -y hostname
 
 RUN mkdir -p /alidata/server && wget -O /alidata/server/mysql.tar.gz http://114.55.255.20:50080/oss/docker/mysql.tar.gz
 RUN cd /alidata/server/ && tar -zxf mysql.tar.gz && rm -f mysql.tar.gz
