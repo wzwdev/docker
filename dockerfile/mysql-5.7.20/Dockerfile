@@ -1,5 +1,5 @@
 #IMAGE mysql-5.7.20
-#DESCRIPTION root/root csst/csst
+#DESCRIPTION root/root
 #docker build -t registry.aliyuncs.com/wzwdev/mysql:5.7.20 .
 #docker run --name mysql -d -p 3306:3306 --restart=always registry.aliyuncs.com/wzwdev/mysql:5.7.20
 
