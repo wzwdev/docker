@@ -26,5 +26,5 @@ ENV PATH=$PATH:/alidata/server/mysql/bin
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
 CMD /run.sh && /usr/sbin/sshd -D
-
+ 
 EXPOSE 22 3306
