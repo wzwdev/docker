@@ -11,7 +11,7 @@ RUN rpm --rebuilddb && yum install -y pcre pcre-devel
 RUN rpm --rebuilddb && yum install -y zlib zlib-devel
 RUN rpm --rebuilddb && yum install -y openssl openssl-devel
 
-ADD http://7xsjza.com1.z0.glb.clouddn.com/nginx-1.10.1.tar.gz /alidata/server/
+ADD http://114.55.255.20:50080/oss/docker/nginx-1.10.1.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf nginx-1.10.1.tar.gz && rm -f nginx-1.10.1.tar.gz
 
 RUN groupadd nginx
