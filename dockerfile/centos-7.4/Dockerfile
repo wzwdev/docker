@@ -1,5 +1,5 @@
 #IMAGE centos-7.4
-#DESCRIPTION centos7.4:root/root,add vim/wget/tar/top/netstat
+#DESCRIPTION centos7.4:root/root,add vim/wget/tar
 #docker build -t registry.aliyuncs.com/wzwdev/centos:7.4 .
 #docker run --name centos -d registry.aliyuncs.com/wzwdev/centos:7.4					    background run,stop not delete
 #docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:7.4                                        background run,stop and delete
@@ -12,9 +12,7 @@ MAINTAINER wzwdev "wzwdev@126.com"
 RUN yum install -y wget
 RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
-RUN rpm --rebuilddb && yum install -y procps
-RUN yum install -y net-tools
-RUN touch /running.log && echo "Docker container running!" >> /running.log  
+RUN touch /running.log && echo "Docker container is running!" >> /running.log  
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "root:root" | chpasswd
