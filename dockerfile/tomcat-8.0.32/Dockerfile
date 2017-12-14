@@ -14,4 +14,4 @@ ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
 CMD /run.sh && /usr/sbin/sshd -D
 
-EXPOSE 22 80 443
+EXPOSE 80 443
