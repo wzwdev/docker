@@ -10,7 +10,7 @@ RUN rpm --rebuilddb && yum install -y libaio
 RUN rpm --rebuilddb && yum install -y numactl
 RUN rpm --rebuilddb && yum install -y hostname
 
-RUN mkdir -p /alidata/server && wget -O /alidata/server/mysql.tar.gz http://114.55.255.20:50080/oss/docker/mysql.tar.gz
+ADD http://114.55.255.20:50080/oss/docker/mysql.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf mysql.tar.gz && rm -f mysql.tar.gz
 ADD files/mysqld /etc/init.d/mysqld
 
