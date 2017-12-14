@@ -12,6 +12,6 @@ RUN cd /alidata/server/ && tar -zxf tomcat-8.0.32.tar.gz && rm -f tomcat-8.0.32.
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
-CMD /run.sh && /usr/sbin/sshd -D
+CMD /run.sh && tail -f /etc/redhat-release
 
 EXPOSE 80 443
