@@ -12,10 +12,8 @@ MAINTAINER wzwdev "wzwdev@126.com"
 RUN yum install -y wget
 RUN rpm --rebuilddb && yum install -y vim
 RUN yum install -y tar
-RUN touch /running.log && echo "Docker container is running!" >> /running.log  
-
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-RUN echo "root:root" | chpasswd
+RUN touch /running.log && echo "Docker container is running!" >> /running.log  
 
 ENV LANG en_US.UTF-8
 
