@@ -10,6 +10,7 @@ MAINTAINER wzwdev "wzwdev@126.com"
 RUN rpm --rebuilddb && yum install -y pcre pcre-devel
 RUN rpm --rebuilddb && yum install -y zlib zlib-devel
 RUN rpm --rebuilddb && yum install -y openssl openssl-devel
+RUN ln -s /usr/lib64/libpcre.so.1 /lib64/libpcre.so.0
 
 ADD http://114.55.255.20:50080/oss/docker/nginx-1.10.1.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf nginx-1.10.1.tar.gz && rm -f nginx-1.10.1.tar.gz
