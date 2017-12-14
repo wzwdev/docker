@@ -3,8 +3,8 @@
 #docker build -t registry.aliyuncs.com/wzwdev/centos:7.4 .
 #docker run --name centos -d registry.aliyuncs.com/wzwdev/centos:7.4					    background run,stop not delete
 #docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:7.4                                        background run,stop and delete
-#docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:7.4 echo wzw                       modi CMD(tail -f /running.log for echo wzw) finish and delete
-#docker run --name centos --rm -it registry.aliyuncs.com/wzwdev/centos:7.4 /bin/bash                    modi CMD(tail -f /running.log for /bin/bash) exit and delete
+#docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:7.4 echo wzw                       modi CMD(tail -f /etc/redhat-release for echo wzw) finish and delete
+#docker run --name centos --rm -it registry.aliyuncs.com/wzwdev/centos:7.4 /bin/bash                    modi CMD(tail -f /etc/redhat-release for /bin/bash) exit and delete
 
 FROM docker.io/centos:7.4.1708
 MAINTAINER wzwdev "wzwdev@126.com"
