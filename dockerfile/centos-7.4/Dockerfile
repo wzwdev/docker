@@ -17,4 +17,4 @@ RUN touch /running.log && echo "Docker container is running!" >> /running.log
 
 ENV LANG en_US.UTF-8
 
-CMD "tail -f /running.log"
+CMD tail -f /running.log
