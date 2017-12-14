@@ -4,7 +4,7 @@
 #docker run --name nginx -d -p 80:80 --restart=always registry.aliyuncs.com/wzwdev/nginx:1.10.1
 #docker run --name nginx -d -p 443:443 --restart=always registry.aliyuncs.com/wzwdev/nginx:1.10.1
 
-FROM registry.aliyuncs.com/wzwdev/centos:6.6
+FROM registry.aliyuncs.com/wzwdev/centos:7.4
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN rpm --rebuilddb && yum install -y pcre pcre-devel
@@ -19,6 +19,6 @@ RUN useradd nginx -g nginx
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
-CMD /run.sh && /usr/sbin/sshd -D
+CMD /run.sh && tail -f /etc/redhat-release
 
-EXPOSE 22 80 443
+EXPOSE 80 443
