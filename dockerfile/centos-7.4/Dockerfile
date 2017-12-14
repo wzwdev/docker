@@ -1,5 +1,5 @@
 #IMAGE centos-7.4
-#DESCRIPTION centos7.4:root/root,add vim/wget/tar
+#DESCRIPTION centos7.4:add vim/wget/tar
 #docker build -t registry.aliyuncs.com/wzwdev/centos:7.4 .
 #docker run --name centos -d registry.aliyuncs.com/wzwdev/centos:7.4					    background run,stop not delete
 #docker run --name centos --rm registry.aliyuncs.com/wzwdev/centos:7.4                                        background run,stop and delete
