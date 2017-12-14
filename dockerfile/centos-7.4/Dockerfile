@@ -10,7 +10,6 @@ FROM docker.io/centos:7.4.1708
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-RUN yum install -y vim
 
 ENV LANG en_US.UTF-8
 
