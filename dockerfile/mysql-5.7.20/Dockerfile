@@ -3,7 +3,7 @@
 #docker build -t registry.aliyuncs.com/wzwdev/mysql:5.7.20 .
 #docker run --name mysql -d -p 3306:3306 --restart=always registry.aliyuncs.com/wzwdev/mysql:5.7.20
 
-FROM registry.aliyuncs.com/wzwdev/centos:7.0
+FROM registry.aliyuncs.com/wzwdev/centos:7.4
 MAINTAINER wzwdev "wzwdev@126.com"
 
 RUN rpm --rebuilddb && yum install -y libaio
@@ -25,6 +25,6 @@ ENV PATH=$PATH:/alidata/server/mysql/bin
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
-CMD /run.sh && /usr/sbin/sshd -D
+CMD /run.sh && tail -f /etc/redhat-release
  
-EXPOSE 22 3306
+EXPOSE 3306
