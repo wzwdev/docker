@@ -6,7 +6,7 @@
 FROM registry.aliyuncs.com/wzwdev/centos:7.4
 MAINTAINER wzwdev "wzwdev@126.com"
 
-ADD http://101.37.82.250:50080/oss/jdk-1.8.0.tar.gz /alidata/server/
+ADDhttp://114.55.255.20:50080/oss/docker/jdk-1.8.0.tar.gz /alidata/server/
 RUN cd /alidata/server/ && tar -zxf jdk-1.8.0.tar.gz && rm -f jdk-1.8.0.tar.gz
 ADD files/java.security /alidata/server/jdk-1.8.0/jre/lib/security/java.security 
 
