@@ -9,6 +9,8 @@
 FROM docker.io/centos:7.0.1406
 MAINTAINER wzwdev "wzwdev@126.com"
 
+RUN yum install -y wget
+RUN yum install -y vim
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ENV LANG en_US.UTF-8
